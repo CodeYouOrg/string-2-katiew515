@@ -10,7 +10,14 @@
 
 def verbing(s):
     # +++your code here+++
-    return
+    if (len(s) >= 3):
+        if s.endswith("ing"):
+            print(s+"ly")
+        else:
+            print(s +"ing")
+    else:
+        print ("Your string must be at least 3 characters")    
+
 
 
 # E. not_bad
@@ -24,7 +31,10 @@ def verbing(s):
 
 def not_bad(s):
     # +++your code here+++
-    return
+    not_index= s.find("not")
+    bad_index= s.find("bad")
+    if not_index < bad_index:
+        s = s[:not_index] + 'good' + s[bad_index + 3:]
 
 
 # F. front_back
@@ -37,7 +47,16 @@ def not_bad(s):
 
 def front_back(a, b):
     # +++your code here+++
-    return
+    def split(s):
+        mid= (len(s)+1)//2
+        return s[:mid], s[mid:]
+
+    a_front, a_back = split(a)
+    b_front, b_back = split(b)
+
+
+    print (a_front + b_front + a_back + b_back)
+    
 
 
 # Simple provided test() function used in main() to print
